@@ -8,5 +8,6 @@ class User < ApplicationRecord
          validates :password,        length: { minimum: 6 }, confirmation: true,  format: { with: /\A[a-zA-Z0-9]+\z/ }, on: :create
        
          validates :name, presence: true
-         validates :profile, presence: true       
+         validates :profile, presence: true    
+         has_one_attached :user_image   
 end
