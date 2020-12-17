@@ -1,3 +1,99 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form {
+  padding: 1% 15%;
+}
+
+.inner {
+  height: 100%;
+  padding: 0 15%;
+}
+
+.field {
+  height: 140vh;
+}
+
+.image_field {
+  height: 570px;
+}
+.text_field {
+  margin: 1px;
+}
+
+.post-contents {
+  width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.post-content {
+  width: 26%;
+  margin: 15px 2.5%;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #fffefc;
+  margin: 15px;
+  float: left;
+}
+
+/* posts.index */
+
+img.logo {
+  width: 120vw;
+  border-radius: 0;
+}
+
+.text_form {
+  display: flex;
+}
+
+.user_form {
+  display: flex;
+}
+  
+.users_name {
+  margin: 0 0 0 15px;
+}
+
+img.post_image {
+  height: 10px;
+}
+
+/* posts._form */
+
+.action_form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions {
+  padding: 20px 50px 20px 0;
+}
+.image_form {
+  padding: 2.5% 3% 0 3%;
+  height: 118vh;
+  width: 63vw;
+  background-color: rgb(236, 236, 236);
+  border-radius: 40px;
+}
+
+img.photo {
+  height: 100vh;
+  width: 63vw;
+  border-radius: 40px;
+}
+
+
+
+textarea#post_title {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(236, 236, 236);
+  border: none;
+  margin: 0 0 0 5px;
+  resize: none;
+}
