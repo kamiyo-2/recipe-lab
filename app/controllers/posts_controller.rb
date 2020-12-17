@@ -18,6 +18,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :post_image).merge(user_id: current_user.id)
