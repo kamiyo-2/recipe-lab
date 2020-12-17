@@ -1,0 +1,30 @@
+<div class="main"><%= link_to image_tag("top.jpg", class: :logo), root_path %>
+  <div class="inner">
+    <div class="post-contents">
+      <div>
+        <% @posts.each do |post| %>
+          <div class="post-content">
+            <div class="post_body">
+              <div class='image_content'>
+                <%= link_to image_tag post.post_image, class: "post_image"%>
+              </div>
+            </div>
+            <div class="text_form">
+              <%= post.title %>
+               
+
+            </div>
+            <div class="user_form">
+
+
+              <div class="users_name">
+                <%= link_to post.user.name, class: :card__title%>
+              </div>
+            </div>
+          </div> 
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
