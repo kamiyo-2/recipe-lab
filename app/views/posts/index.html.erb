@@ -11,9 +11,26 @@
             </div>
             <div class="text_form">
               <%= post.title %>
-              <%= link_to post.title, post_path(post.id), method: :get, class: :card_title%>
-               
-
+                <%= link_to post.title, post_path(post.id), method: :get, class: :card_title%>
+                <div class="like", id="post_<%= post.id %>">
+                  <% if user_signed_in?%>
+                    <% if current_user.liked_by?(post.id) %>
+                      <div>
+                        <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
+                        <i class="fa fa-heart unlike-btn"></i>
+                        <% end %>
+                        <%= post.likes.count %>
+                      </div>
+                    <% else %>
+                      <div>
+                        <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
+                        <i class="fa fa-heart like-btn"></i>
+                        <% end %>
+                        <%= post.likes.count %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
             </div>
             <div class="user_form">
 
