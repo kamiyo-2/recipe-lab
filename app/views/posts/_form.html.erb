@@ -2,8 +2,9 @@
   <div class="field">
     <%= form_with(model: @post,local: true) do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
-      <div class="image">
+      <div class="image_form">
         <div id="image-list"></div>
+        <%= image_tag 'photo.jpg',class: "photo" %>
        <%= f.file_field :post_image %> 
 
         <div class="text_field">

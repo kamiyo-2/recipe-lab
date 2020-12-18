@@ -14,12 +14,13 @@
     </div> 
     <div class="image">
       <div id="image-list"></div>
-      <%= image_tag @post.post_image, class: "posts"  %>
+      <%= image_tag @post.post_image, class: "post_show"  %>
       <div class="post_user_name">
         <%= @post.user.name%>
       </div>
       <div class="text_field">
         <%=  @post.title %>
+      </div>
       </div>
       <div class="comments">
         <% if user_signed_in?%>
@@ -48,6 +49,6 @@
           <% end %>
         </div> 
       </div>
-    </div>
+    
   </div>
 </div>
