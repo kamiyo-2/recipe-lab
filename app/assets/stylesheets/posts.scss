@@ -11,9 +11,6 @@
   padding: 0 15%;
 }
 
-.field {
-  height: 140vh;
-}
 
 .image_field {
   height: 570px;
@@ -22,8 +19,10 @@
   margin: 1px;
 }
 
+/* posts.index */
 .post-contents {
   width: 100%;
+  height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -35,12 +34,13 @@
   flex-direction: column;
   padding: 12px;
   border-radius: 10px;
-  background-color: #fffefc;
+  background-color: rgb(236, 236, 236);
   margin: 15px;
   float: left;
+  border-radius: 20px;
 }
 
-/* posts.index */
+
 
 img.logo {
   width: 120vw;
@@ -60,7 +60,9 @@ img.logo {
 }
 
 img.post_image {
-  height: 10px;
+  height: 35vh;
+  width: 18vw;
+  border-radius: 20px;
 }
 
 /* posts._form */

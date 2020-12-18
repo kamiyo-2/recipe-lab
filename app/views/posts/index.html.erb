@@ -1,7 +1,6 @@
 <div class="main"><%= link_to image_tag("top.jpg", class: :logo), root_path %>
   <div class="inner">
     <div class="post-contents">
-      <div>
         <% @posts.each do |post| %>
           <div class="post-content">
             <div class="post_body">
@@ -10,7 +9,6 @@
               </div>
             </div>
             <div class="text_form">
-              <%= post.title %>
                 <%= link_to post.title, post_path(post.id), method: :get, class: :card_title%>
                 <div class="like", id="post_<%= post.id %>">
                   <% if user_signed_in?%>
@@ -32,16 +30,15 @@
                   <% end %>
                 </div>
             </div>
-            <div class="user_form">
 
+            <%# <%= link_to image_tag(post.user.user_image, class: :card__img ), user_path(post.user.id), method: :get%> %>
 
               <div class="users_name">
-                <%= link_to post.user.name, class: :card__title%>
+                <%= link_to post.user.name,  user_path(post.user.id), method: :get, class: :card__title%>
               </div>
-            </div>
+
           </div> 
         <% end %>
-      </div>
     </div>
   </div>
 </div>
