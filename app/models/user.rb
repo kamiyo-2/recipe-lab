@@ -10,7 +10,7 @@ class User < ApplicationRecord
          validates :name, presence: true
          validates :profile, presence: true    
          has_one_attached :user_image   
-
+         has_many :posts, dependent: :destroy
          has_many :comments, dependent: :destroy
          has_many :likes, dependent: :destroy
          
