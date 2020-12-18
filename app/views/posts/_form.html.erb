@@ -1,12 +1,15 @@
 <div class="form">
   <div class="field">
     <%= form_with(model: @post,local: true) do |f| %>
-    <%= render 'layouts/error_messages', model: f.object %>
+      <%= render 'layouts/error_messages', model: f.object %>
       <div class="image_form">
         <div id="image-list"></div>
-        <%= image_tag 'photo.jpg',class: "photo" %>
+        <% if @post.post_image.attached? %>
+          <%= image_tag @post.post_image , class: "photo"%> 
+        <% else %>
+          <%= image_tag 'photo.jpg',class: "photo" %>
+        <% end%>
        <%= f.file_field :post_image %> 
-
         <div class="text_field">
           <%= f.text_area :title ,placeholder:"オプションを記入" %>
         </div>
@@ -22,4 +25,3 @@
      <% end %>
   </div>
 </div>
-
