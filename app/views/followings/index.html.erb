@@ -1,0 +1,18 @@
+<div class="main_form">
+  <div class="followers">
+   <% @followings.each do |user| %>
+      <div class="follower_icon">
+        <div class='user_image'>
+<% if user.user_image.attached? %>
+                <%= image_tag user.user_image , class: "user_image"%> 
+              <% else %>
+            <%= image_tag ( "photo.jpg") , class: "user_image" %> 
+              <% end%>
+        </div>
+        <div class="follower_name">
+          <%= link_to user.name, [user] %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
