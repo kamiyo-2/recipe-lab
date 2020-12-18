@@ -30,13 +30,18 @@
                   <% end %>
                 </div>
             </div>
-
-            <%# <%= link_to image_tag(post.user.user_image, class: :card__img ), user_path(post.user.id), method: :get%> %>
-
+            <div class="user_form_index">
+              <div class="user_image_index">
+                <% if post.user.user_image.attached? %>
+                  <%= image_tag post.user.user_image , class: "user_image_index"%> 
+                <% else %>
+                  <%= image_tag ( "photo.jpg") , class: "user_image_index" %> 
+                <% end%>
+              </div>
               <div class="users_name">
                 <%= link_to post.user.name, user_path(post.user.id), method: :get, class: :card__title%>
               </div>
-
+            </div>
           </div> 
         <% end %>
     </div>

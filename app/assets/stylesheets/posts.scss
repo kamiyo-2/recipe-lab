@@ -56,13 +56,23 @@ img.logo {
 }
   
 .users_name {
-  margin: 0 0 0 15px;
+  margin: 23px 0 0 15px;
 }
 
 img.post_image {
   height: 35vh;
   width: 18vw;
   border-radius: 20px;
+}
+
+.user_image_index {
+  height: 6vh;
+  width: 5vw;
+  border-radius: 150%;
+}
+
+.user_form_index {
+  display: flex;
 }
 
 /* posts._form */
