@@ -12,10 +12,22 @@
                 <%= image_tag @user.user_image , class: "user_image"%> 
               <% else %>
             <%= image_tag ( "photo.jpg") , class: "user_image" %> 
-
               <% end%>
             </div>
-            
+            <div class="user_format">
+              <div class="format_button">
+                <div class="count"><%= @posts.count%></div>
+                <p>投稿</p>
+              </div>
+              <div class="format_button">
+                <div class="count"> <%= @user.followings.count %></div>
+                <p><%= link_to "フォロー中", [@user, :followings] %></p>
+              </div>
+              <div class="format_button">
+                <div class="count"><%=@user.followers.count %></div>
+                <p><%= link_to "フォロワー", [@user, :followers] %></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
