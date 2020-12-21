@@ -5,11 +5,11 @@
           <div class="post-content">
             <div class="post_body">
               <div class='image_content'>
-                <%= link_to image_tag post.post_image, class: "post_image"%>
+                <%= link_to (image_tag post.post_image), post_path(post.id), method: :get, class: "post_image"%>
               </div>
             </div>
             <div class="text_form">
-                <%= link_to post.title, post_path(post.id), method: :get, class: :card_title%>
+                <%= link_to post.title, post_path(post.id), method: :get, class: :post_title%>
                 <div class="like", id="post_<%= post.id %>">
                   <% if user_signed_in?%>
                     <% if current_user.liked_by?(post.id) %>

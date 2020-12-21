@@ -59,22 +59,27 @@ img.logo {
   margin: 23px 0 0 15px;
 }
 
-img.post_image {
+.post_image img {
   height: 35vh;
   width: 18vw;
   border-radius: 20px;
 }
 
 .user_image_index {
-  height: 6vh;
-  width: 5vw;
-  border-radius: 150%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 
 .user_form_index {
   display: flex;
 }
 
+
+.post_title {
+  padding: 0px 8px 0 3px;
+  width: 78%;
+}
 /* posts._form */
 
 .action_form {

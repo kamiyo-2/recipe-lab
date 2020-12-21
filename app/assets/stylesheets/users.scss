@@ -3,7 +3,57 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img.user_image {
-  height: 26vh;
-  width: 20vw;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
+}
+
+.user-form {
+  display: flex;
+}
+
+.user-form-side {
+
+}
+
+.user__wrapper {
+  padding: 0 0 75px 0;
+}
+
+
+.user-forms {
+  display: flex;
+}
+
+.user_format {
+  display: flex;
+  width: 100%;
+
+}
+
+.user_names {
+  height: 50px;
+    font-size: 30px;
+    padding: 5px 7%;
+
+}
+
+.user-form-side {
+  padding: 0 0 0 2vw;
+  width: 44vw;
+}
+
+.format_button {
+  padding: 9% 9%;
+}
+
+.user_buttons {
+  height: 60px;
+  font-size: 2px;
+}
+
+.user_profiles {
+  height: 100px;
+  font-size: 30px;
+  padding: 0 9%;
 }
