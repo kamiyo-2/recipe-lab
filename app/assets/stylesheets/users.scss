@@ -57,3 +57,43 @@ img.user_image {
   font-size: 30px;
   padding: 0 9%;
 }
+
+// user.edit
+
+.user_name_edit {
+  padding: 20px;
+}
+
+input#user_name {
+  height: 5VH;
+  width: 64vw;
+}
+
+.user_profiles_edit {
+  padding: 20px;
+}
+
+input#user_profile.profile_edit {
+  height: 5VH;
+  width: 64vw;
+}
+
+.button_form_edit{
+  display: flex;
+}
+
+.button_update {
+  padding: 0 7% 0 72%;
+}
+
+.button_delete {
+  
+}
+
+.btn_update {
+  padding: 10px;
+}
+
+.btn_delete {
+  padding: 10px;
+}
