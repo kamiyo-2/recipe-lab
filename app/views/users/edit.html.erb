@@ -5,9 +5,14 @@
         <%= render 'layouts/error_messages', model: f.object %>
         <div class="user_back">
           <div class='users_form_edit'>
-            <div class="users_image", id="image-lists"></div>
-            <div id="image-list"></div>
-            <%= image_tag 'photo.jpg',class: "photo" %>
+            <div class='image_user_form'>
+            <div class="image_preview_user", id="image-list"></div>
+            <% if @user.user_image.attached? %>
+              <%= image_tag @user.user_image , class: "photo_user"%> 
+            <% else %>
+              <%= image_tag ( "photo.jpg") , class: "photo_user" %> 
+            <% end%>
+            </div>
       　　　　 <%= f.file_field :user_image %> 
           </div>  
         </div>
@@ -19,13 +24,15 @@
             <%= f.text_field :profile, class: "profile_edit"%>
           </div>
         </div>
-        <div class='actions'>
-          <%= f.submit "Update", class: 'btn'%>
-        </div>
-        <div class='actions_delete'>
-          <%=link_to user_path(current_user.id), method: :delete  do %>
-            <button class="btn_delete" >Delete</button>
-          <%end%>
+        <div class="button_form_edit">
+          <div class='button_update'>
+            <%= f.submit "update", class: 'btn_update'%>
+          </div>
+          <div class='button_delete'>
+            <%=link_to user_path(current_user.id), method: :delete  do %>
+              <%= f.submit "Delete", class: 'btn_delete'%>
+            <%end%>
+          </div>
         </div>
       <% end %>
     </div>

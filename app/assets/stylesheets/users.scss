@@ -3,7 +3,144 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img.user_image {
-  height: 26vh;
-  width: 20vw;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
+}
+
+.user-form {
+  display: flex;
+}
+
+.user-form-side {
+
+}
+
+.user__wrapper {
+  padding: 0 0 75px 0;
+}
+
+
+.user-forms {
+  display: flex;
+}
+
+.user_format {
+  display: flex;
+  width: 100%;
+
+}
+
+.user_names {
+  height: 50px;
+    font-size: 30px;
+    padding: 5px 7%;
+
+}
+
+.user-form-side {
+  padding: 0 0 0 2vw;
+  width: 44vw;
+}
+
+.format_button {
+  padding: 9% 9%;
+}
+
+.user_buttons {
+  height: 60px;
+  font-size: 2px;
+}
+
+.user_profiles {
+  height: 75px;
+  font-size: 30px;
+  padding: 0 9%;
+}
+
+.follows {
+  height: 50px;
+  font-size: 35px;
+  padding: 0 35%;
+}
+
+// user.edit
+
+.user_name_edit {
+  padding: 20px;
+}
+
+input#user_name {
+  height: 5VH;
+  width: 64vw;
+}
+
+.user_profiles_edit {
+  padding: 20px;
+}
+
+input#user_profile.profile_edit {
+  height: 5VH;
+  width: 64vw;
+}
+
+.button_form_edit{
+  display: flex;
+}
+
+.button_update {
+  padding: 0 7% 0 72%;
+}
+
+.button_delete {
+  
+}
+
+.btn_update {
+  padding: 10px;
+}
+
+.btn_delete {
+  padding: 10px;
+}
+
+.image_preview_user div img {
+  height: 50vh;
+  width: 50vw;
+  border-radius: 50%;
+}
+
+.photo_user {
+  height: 50vh;
+  width: 50vw;
+  border-radius: 50%;
+}
+
+// user.follow
+
+.user_image_follows {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+
+}
+
+.follower_icon {
+  height: 275px;
+  width: 250px;
+  background-color: rgb(236, 236, 236);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 25%;
+}
+
+.followers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.follower_name {
+
+  padding: 0 35px;
+
 }

@@ -6,67 +6,84 @@
           <div class="user_names"><%= @user.name%></div>
         </div>
         <div class='user-form'>
-          <div class="user-forms">
-            <div class='user_image'>
+          <div class='user_image'>
             <% if @user.user_image.attached? %>
-                <%= image_tag @user.user_image , class: "user_image"%> 
-              <% else %>
-            <%= image_tag ( "photo.jpg") , class: "user_image" %> 
-              <% end%>
-            </div>
-            <div class="user_format">
-              <div class="format_button">
-                <div class="count"><%= @posts.count%></div>
-                <p>投稿</p>
-              </div>
-              <div class="format_button">
-                <div class="count"> <%= @user.followings.count %></div>
-                <p><%= link_to "フォロー中", [@user, :followings] %></p>
-              </div>
-              <div class="format_button">
-                <div class="count"><%=@user.followers.count %></div>
-                <p><%= link_to "フォロワー", [@user, :followers] %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="user_profile">
-        <div class="user_name">
-          <%= @user.name %>
-        </div>
-        <div class="user_profiles">
-          <%= @user.profile %>
-        </div>
-        <div class="follows">
-          <%if user_signed_in? && current_user != @user %>
-            <% if current_user.active_relationships.exists?(target_user_id: @user.id) %>
-              <%= link_to 'unfollow', [@user, :follow], method: :delete, class: :unfollow %>
+              <%= image_tag @user.user_image , class: "user_image"%> 
             <% else %>
-              <%= link_to 'follow', [@user, :follow], method: :post, class: :follow %>
-            <% end %>
-          <% else%>
-            <%= link_to "プロフィールを編集", edit_user_path(current_user), class: :edit_button %>
-          <% end %>
-          <div class="user_button">
-            <div class="user_buttons">投稿</div>
+              <%= image_tag ( "photo.jpg") , class: "user_image" %> 
+            <% end%>
           </div>
-        </div>  
-        <div class="user-post">
-          <div class="`user_post-contents">
-            <% @posts.each do |post| %>
-              <div class="user_post-content">
-                <div class="post_body">
-                  <div class='image_content'>
-
-                  </div>
-                  <%= link_to post.title, post_path(post.id), method: :get, class: :card__title%>
+          <div class="user-form-side">
+            <div class="user-forms">
+              <div class="user_format">
+                <div class="format_button">
+                  <div class="count"><%= @posts.count%></div>
+                  <p>投稿</p>
                 </div>
-              </div> 
-            <% end %>
+                <div class="format_button">
+                  <div class="count"> <%= @user.followings.count %></div>
+                  <p><%= link_to "フォロー中", [@user, :followings] %></p>
+                </div>
+                <div class="format_button">
+                  <div class="count"><%=@user.followers.count %></div>
+                  <p><%= link_to "フォロワー", [@user, :followers] %></p>
+                </div>
+              </div>
+            </div>
+            <div class="user_profile">
+              <div class="user_profiles">
+                <%= @user.profile %>
+              </div>
+              <div class="follows">
+                <%if user_signed_in? && current_user != @user %>
+                  <% if current_user.active_relationships.exists?(target_user_id: @user.id) %>
+                    <%= link_to 'unfollow', [@user, :follow], method: :delete, class: :unfollow %>
+                  <% else %>
+                    <%= link_to 'follow', [@user, :follow], method: :post, class: :follow %>
+                  <% end %>
+                <% else%>
+                  <%= link_to "プロフィールを編集", edit_user_path(current_user), class: :edit_button %>
+                <% end %>
+              </div>  
+            </div>
           </div>
         </div>
       </div>
+      <div class="user-post">
+        <div class="`user_post-contents">
+          <% @posts.each do |post| %>
+            <div class="post-content">
+            <div class="post_body">
+              <div class='image_content'>
+                <%= link_to (image_tag post.post_image), post_path(post.id), method: :get, class: "post_image"%>
+              </div>
+            </div>
+            <div class="text_form">
+                <%= link_to post.title, post_path(post.id), method: :get, class: :post_title%>
+                <div class="like", id="post_<%= post.id %>">
+                  <% if user_signed_in?%>
+                    <% if current_user.liked_by?(post.id) %>
+                      <div>
+                        <%= link_to destroy_like_path(post), class: "like-link", method: :DELETE, remote: true do %>
+                        <i class="fa fa-heart unlike-btn"></i>
+                        <% end %>
+                        <%= post.likes.count %>
+                      </div>
+                    <% else %>
+                      <div>
+                        <%= link_to create_like_path(post), class: "like-link", method: :POST, remote: true do %>
+                        <i class="fa fa-heart like-btn"></i>
+                        <% end %>
+                        <%= post.likes.count %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+            </div>
+          </div> 
+          <% end %>
+        </div>
+      </div>  
     </div>
   </div>
 </div>

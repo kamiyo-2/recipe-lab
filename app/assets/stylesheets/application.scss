@@ -13,10 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
-
-//  @import "font-awesome-sprockets";
-//  @import "font-awesome";
+ 
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
 .main_form {
   padding: 150px 0 0 0;
@@ -52,7 +51,7 @@ header {
     li {
       list-style: none;
 
-      a {
+      a.header_button {
         text-decoration: none;
         color: white;
         margin: 0 15px;
@@ -80,4 +79,9 @@ header.scroll-nav ul li a {
 
 body {
   padding: 130px 0 0 0px;
+}
+
+a{
+
+  color: black;
 }
