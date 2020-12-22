@@ -3,7 +3,7 @@
     <%= form_with(model: @post,local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="image_form">
-        <div id="image-list"></div>
+        <div class="image_preview", id="image-list"></div>
         <% if @post.post_image.attached? %>
           <%= image_tag @post.post_image , class: "photo"%> 
         <% else %>

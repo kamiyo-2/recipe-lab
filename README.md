@@ -26,7 +26,7 @@
 | ------------- | ------------ | ----------------- |
 | text          | string       | null: false       |
 | post_image_id | string       | null: false       |
-| user          | references   | foreign_key: true |
+| user          | references   | foreign_key: true 
 
 ### Association
 - belongs_to :users
