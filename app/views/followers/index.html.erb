@@ -2,15 +2,15 @@
   <div class="followers">
     <% @followers.each do |user| %>
       <div class="follower_icon">
-        <div class='user_image'>
-<% if user.user_image.attached? %>
-                <%= image_tag user.user_image , class: "user_image"%> 
-              <% else %>
-            <%= image_tag ( "photo.jpg") , class: "user_image" %> 
-              <% end%>
-        </div>
-        <div class="follower_name">
-          <%= link_to user.name, [user] %>
+        <div class='user_image_follow'>
+          <% if user.user_image.attached? %>
+            <%= image_tag user.user_image , class: "user_image_follows"%> 
+          <% else %>
+            <%= image_tag ( "photo.jpg") , class: "user_image_follows" %> 
+          <% end%>
+          <div class="follower_name">
+            <%= link_to user.name, [user] %>
+          </div>
         </div>
       </div>
     <% end %>
