@@ -59,3 +59,5 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
 gem 'font-awesome-sass'
+
+gem 'rspec-rails', '~> 4.0.0'
